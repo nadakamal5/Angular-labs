@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="bg-primary text-light text-center p-1 rounded mb-3">
+      <h1>Students table</h1>
+    </div>
+    <div class="row justify-content-center gy-3">
+  
+  
+      <div class="col-12 ">
+        <input [(ngModel)]="nameValue" class="form-control" (input)="validateName()" placeholder="Enter your name" type="text">
+        <p *ngIf="flag" class="text-danger">Name in 4:15</p>
+  
+      </div>
+      <div class="col-12 ">
+        <input [(ngModel)]="ageValue" class="form-control" (input)="validateAge()" placeholder="Enter your age" type="text">
+        <p *ngIf="flag2" class="text-danger">Age 18+:80</p>
+  
+      </div>
+  
+  
+      <div class="col-3">
+        <button class="btn btn-success" (click)="addStudent()">Add Student</button>
+        <p></p>
+      </div>
+  
+  
+    </div>
+  </div>
+  
+  <table class=" table table-hover w-75 m-auto text-center">
+    <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>age</th>
+    <tbody>
+  
+        <tr *ngFor="let todoName of todosName;let i = index" >
+          <td>{{i+1}}</td>
+          <td>{{todoName}}</td>
+          <td>{{todosAge[i]}}</td>
+        </tr>
+  
+      </tbody>
+  </table>
+  
